@@ -11,9 +11,16 @@
 
 body {
     font-family: "SF Pro Display", 'Arial', sans-serif;
-    line-height: 2;
-    color: #333;
-    background-color: #727070;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111111;
+    background-color: #ececec;
+    position: relative;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
 }
 
 /* TOP BANNER */
@@ -22,18 +29,21 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: #181830;
 }
 
 .top-banner img {
-    width: 100%;
+    width: auto;
 }
 
 /* ====================
    HEADER SECTION
 ==================== */
 header {
-    background-color: white;
+    width: 100%;     /* Chiếm toàn bộ chiều rộng của trang */
+    background-color: #eee; /* Màu nền cho header */
 }
+
 
 .header-container {
     display: flex;
@@ -123,7 +133,7 @@ header {
 /* NAV */
 
 nav {
-    background-color: whitesmoke;
+    background-color: #2121211f;
     display: flex;
     align-items: center;
     justify-content: center; 
@@ -156,136 +166,168 @@ li {
 /* ====================
    MAIN CONTENT
 ==================== */
-main {
-    padding: 40px 0;
-}
 
-.main-container {
-    display: flex;
-    gap: 20px;
-}
+/* INDEX SLIDER SECTION */
 
-.blog-post img {
-    height: auto;
-    width: 50%;
-    border-radius: 0;
-}
-.blog-post {
-    flex: 3;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.blog-post h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-.post-image {
+.section-slider {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    object-fit: cover;
+    height:513px;
 }
 
-.blog-post p {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    color: #555;
+.container-fluid {
+    width: 1220px;
+    height: 513px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
 }
 
-.blog-post h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #444;
-}
-
-.related-posts {
-    list-style: none;
-    padding-left: 0;
-}
-
-.related-posts li {
-    margin-bottom: 10px;
-}
-
-.related-posts a {
-    text-decoration: none;
-    color: #0066cc;
-    transition: color 0.3s ease;
-}
-
-.related-posts a:hover {
-    color: #004999;
-}
-
-
-.sidebar {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar .widget {
-    margin-bottom: 20px;
-}
-
-.sidebar .widget h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #444;
-}
-
-.sidebar .widget ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.sidebar .widget ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar .widget ul li a {
-    text-decoration: none;
-    color: #0066cc;
-    transition: color 0.3s ease;
-}
-
-.sidebar .widget ul li a:hover {
-    color: #004999;
-}
-
-
-.social-links {
+.index-slider--wrap {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: flex-start;
+    padding-top: 20px;
+    height: 513px;
+
+}
+/* SLIDER NAV */ 
+
+.index-slider--nav {
+    display: block; /* media mobile display none */
+    width: 216px;
+    height: 496px;
+    color: #333;
+    cursor: pointer;
+    align-items: center;
+    user-select: none;
+    z-index: 1;
+    margin-right: 8px;
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
 }
 
-.social-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+/* SLIDER BANNER */
+
+.index-slider--banner {
+    width: calc(100% - 224px); /* media mobile 100% */
+    position: relative;
+    z-index: 0; 
+    background: #fff;
 }
 
-.social-links a:hover {
-    color: #ddd;
+.index-banner--wrap {
+    display: flex;
+    height: 100%;
+}
+/* LEFT BANNER */
+
+.index-banner--left {
+    width: calc(100% / 3* 2);
+}
+
+.index-banner--left .index-banner--top {
+    height: 325.91px;
+    overflow: hidden;
+    position: relative;
+}
+
+.index-banner--left .index-banner--bottom {
+    height: 167.66px;
+    display: block; /* media mobile display none */
+}
+
+.index-banner--left .index-banner--list {
+    display: flex;
+    margin: 0 -4px;
+    padding-top: 7px;
+    height: inherit;
+}
+
+.index-banner--left .aspect-ratio {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding-bottom: calc((var(--height-img) / var(--width-img))* 100%);
+    border-radius: 4px;
+}
+
+.index-banner--left .aspect-ratio img {
+    position: absolute;
+    left: 0%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.index-banner--left .index-banner--item {
+    width: calc(100% / 2);
+    padding: 0 4px;
+}
+
+.index-banner--left .fade-box {
+    position: relative;
+    overflow: hidden;
+}
+/* BANNER RIGHT */
+
+.index-banner--right {
+    width: calc(100% / 3);
+    padding-left: 8px;
+    display: block; /* media mobile display none */
+}
+
+.index-banner--right .index-banner--list {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.index-banner--right .index-banner--item {
+    display: inline-block;
+    padding: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+.index-banner--right .index-banner--item + .index-banner--item {
+    padding-top: 8px;
+}
+
+.index-banner--right .fade-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.index-banner--right .aspect-ratio {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding-bottom: calc((var(--height-img) / var(--width-img))* 100%);
+    border-radius: 4px;
+}
+
+.index-banner--right .aspect-ratio img {
+    position: absolute;
+    left: 0%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 /* ====================
    FOOTER SECTION
 ==================== */
 
-
 .footer {
-    background-color: white;
+    background-color: #eee;
     position: relative;
     padding-top: 60px;
     color: black;
@@ -315,4 +357,6 @@ main {
     margin-bottom: 5px;
 }
 
-
+.footer-section h4:hover {
+    color: red;
+}
