@@ -36,6 +36,10 @@ svg {
     vertical-align: middle;
 }
 
+section {
+    display: block;
+}
+
 .site-overlay {
     position: fixed;
     top: 0;
@@ -230,7 +234,8 @@ header {
 }
 
 .container-fluid {
-    width: 1220px;
+    max-width: 1220px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 0 10px;
@@ -466,7 +471,7 @@ header {
     padding: 0 4px;
 }
 
-.index-banner--left .fade-box {
+.fade-box {
     position: relative;
     overflow: hidden;
 }
@@ -497,11 +502,6 @@ header {
     padding-top: 8px;
 }
 
-.index-banner--right .fade-box {
-    position: relative;
-    overflow: hidden;
-}
-
 .index-banner--right .aspect-ratio {
     position: relative;
     overflow: hidden;
@@ -520,6 +520,52 @@ header {
     width: 100%;
     height: 100%;
 }
+
+/* SECTION SUB BANNERS */
+
+.section-subbanners {
+    padding-bottom: 16px;
+}
+
+.subbanners-list {
+    padding: 8px 5px;
+}
+
+.subbanners-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    flex-direction: row;
+}
+
+
+.subbanners-item {
+    display: inline-block;
+    padding: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+.subbanners-item .aspect-ratio {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding-bottom: calc((var(--height-img) / var(--width-img))* 100%);
+    border-radius: 4px;
+}
+
+.subbanners-item .aspect-ratio img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
 
 /* ====================
    FOOTER SECTION
